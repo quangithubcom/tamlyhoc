@@ -2,10 +2,17 @@
 <html lang="en">
 <head>  
     <meta charset="utf-8">
-    <title>CRM</title>
+    <title>Tạp Chí Tâm Lý Học Việt Nam - Hội Tâm lý học Việt Nam</title>
+    <meta content="VAP" name="author" />
+    <meta name="og:title" content="Giới thiệu" />
+    <meta name="og:description" content="" />
+    <meta name="og:image" content="https://tapchitamlyhocvietnam.com/images/banner.jpg" />
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tạp Chí Tâm Lý Học Việt Nam - Hội Tâm lý học Việt Nam">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url('public/backend/'); ?>assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url('public/img/lg.png'); ?>">
     <!-- plugin css -->
     <link href="<?= base_url('public/backend/'); ?>assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,7 +61,7 @@
 
                         <a href="" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="<?= base_url('public/backend/'); ?>assets/images/logo-light.png" alt="logo-sm-light" height="24">
+                                <img src="<?= base_url('public/img/vap.png'); ?>" alt="logo-sm-light" height="24">
                             </span>
                             <span class="logo-lg">
                                 <img src="<?= base_url('public/backend/'); ?>assets/images/logo-sm-light.png" alt="logo-light" height="25">
@@ -68,7 +75,7 @@
                     
                     <!-- start page title -->
                     <div class="page-title-box align-self-center d-none d-md-block">
-                        <h4 class="page-title mb-0 text-uppercase"><?php if(isset($title)){ echo $title; }else{ echo 'CRM'; } ?></h4>
+                        <h4 class="page-title mb-0 text-uppercase"><?php if(isset($title)){ echo $title; }else{ echo 'Tạp Chí Tâm Lý Học Việt Nam'; } ?></h4>
                     </div>
                     <!-- end page title -->
                 </div>
@@ -177,7 +184,7 @@
                     <img src="<?= base_url('public/backend/'); ?>assets/images/logo-sm-light.png" alt="logo-sm-light" height="24">
                 </span>
                 <span class="logo-lg">
-                    <img src="<?= base_url('public/backend/'); ?>assets/images/logo-light.png" alt="logo-light" height="22">
+                    <img src="<?= base_url('public/img/vap.png'); ?>" alt="logo-light" height="22">
                 </span>
             </a>
         </div>
@@ -201,7 +208,7 @@
             <button type="button" class="btn w-100 px-0 border-0" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                        <img src="<?= base_url('public/backend/'); ?>assets/images/bg.jpg" class="img-fluid header-profile-user rounded-circle" alt="">
+                        <img src="<?= base_url('public/img/logo.png'); ?>" class="img-fluid header-profile-user rounded-circle" alt="">
                     </div>
 
                     <div class="flex-grow-1 ms-2 text-start">

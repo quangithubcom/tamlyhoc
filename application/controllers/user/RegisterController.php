@@ -29,17 +29,18 @@ class RegisterController extends CI_Controller {
 				$this->session->set_flashdata($dataresult);
 				redirect('register');
 			}else{
+				$array = [18,140];
 				$insert = array(
 					'email' => $email,
 					'name' => $fullname,
 					'password' => $password,
-					'decentralization' => json_encode(array()),
+					'decentralization' => json_encode($array),
 					'status' => 1,
 					'admin' => 1,
 				);
 				$query = $this->db->insert('tb_user', $insert);
 				if($query){
-					$dataresult = array('access' => 'ok','messenger' => 'Đăng kí tài khoản thành công! Vui lòng đăng nhập',);
+					$dataresult = array('success' => 'ok','messenger' => 'Đăng kí tài khoản thành công! Vui lòng đăng nhập',);
 					$this->session->set_flashdata($dataresult);
 					redirect('login');
 				}else{

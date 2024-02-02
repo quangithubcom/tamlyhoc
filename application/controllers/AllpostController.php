@@ -10,7 +10,8 @@ class AllpostController extends CI_Controller {
 
 	public function index()
 	{
-		$data['list_post'] = $this->db->select('*')->from('tlh_postinglist')->get()->result_array();
+		$data['list_post_2'] = $this->db->select('*')->from('tlh_postinglist')->where('status',2)->order_by('date_creat','desc')->get()->result_array();
+		$data['list_post_3'] = $this->db->select('*')->from('tlh_postinglist')->where('status!=',2)->order_by('date_creat','desc')->get()->result_array();
 		$data['list_counter'] = $this->db->select('*')->from('tb_user')->where('admin',7)->get()->result_array();
 		$data['template'] = 'allpost/v_main';
 		$this->load->view('backend/layout/v_main',$data);

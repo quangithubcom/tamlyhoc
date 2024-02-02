@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap);#page-topbar {
+@font-face {
+    font-family: themebunfont;
+    src: url('../fonts/elle-futura.otf');
+  }
+#page-topbar {
     position: fixed;
     top: 0;
     right: 0;
@@ -559,7 +563,7 @@ body[data-layout=horizontal] .footer {
     font-size: 14px;
     -webkit-transition: all .4s;
     transition: all .4s;
-    font-family: Rubik,sans-serif
+    font-family: "themebunfont",sans-serif
 }
 
 #sidebar-menu ul li a i {
@@ -637,7 +641,7 @@ body[data-layout=horizontal] .footer {
     text-transform: uppercase;
     color: var(--bs-sidebar-menu-item-icon-color);
     font-weight: 600;
-    font-family: Rubik,sans-serif;
+    font-family: "themebunfont",sans-serif;
     opacity: .5
 }
 
@@ -1198,7 +1202,7 @@ body[data-sidebar=colored] .menu-title {
     position: relative;
     padding: 1rem 1.3rem;
     color: var(--bs-menu-item-color);
-    font-family: Rubik,sans-serif
+    font-family: "themebunfont",sans-serif
 }
 
 .topnav .navbar-nav .nav-link i {
@@ -1995,7 +1999,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid,body[data-
 }
 
 .font-family-secondary {
-    font-family: Rubik,sans-serif
+    font-family: "themebunfont",sans-serif
 }
 
 .font-size-10 {
@@ -3153,7 +3157,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid,body[data-
 }
 
 .irs {
-    font-family: var(--bs-font-sans-serif)
+    font-family: "themebunfont"
 }
 
 .irs--round .irs-bar,.irs--round .irs-from,.irs--round .irs-single,.irs--round .irs-to {
@@ -4193,7 +4197,7 @@ div.dt-button-info h2 {
 }
 
 .apex-charts text {
-    font-family: var(--bs-font-sans-serif)!important
+    font-family: "themebunfont"!important
 }
 
 .apex-charts .apexcharts-canvas {
@@ -4205,7 +4209,7 @@ div.dt-button-info h2 {
 }
 
 .apexcharts-tooltip-text,.apexcharts-tooltip-title {
-    font-family: var(--bs-font-sans-serif)!important
+    font-family: "themebunfont"!important
 }
 
 .apexcharts-legend-series {
@@ -4219,7 +4223,7 @@ div.dt-button-info h2 {
 
 .apexcharts-legend-text {
     color: var(--bs-gray-500)!important;
-    font-family: var(--bs-font-sans-serif)!important;
+    font-family: "themebunfont"!important;
     font-size: 13px!important
 }
 
@@ -4228,7 +4232,7 @@ div.dt-button-info h2 {
 }
 
 .apexcharts-xaxis text,.apexcharts-yaxis text {
-    font-family: var(--bs-font-sans-serif)!important;
+    font-family: "themebunfont"!important;
     fill: var(--bs-gray-500)
 }
 
@@ -4281,7 +4285,7 @@ div.dt-button-info h2 {
     color: #eff5f6!important;
     font-size: 12px!important;
     line-height: 18px!important;
-    font-family: var(--bs-font-sans-serif)!important;
+    font-family: "themebunfont"!important;
     font-weight: 500!important
 }
 
@@ -4328,7 +4332,7 @@ div.dt-button-info h2 {
     border: none;
     background: #47484a;
     color: #f8f9fa;
-    font-family: var(--bs-font-sans-serif);
+    font-family: "themebunfont";
     font-size: .875rem;
     padding: 5px 8px
 }
@@ -4350,7 +4354,7 @@ div.dt-button-info h2 {
 }
 
 .bg-auth {
-    background-image: url(../images/auth.png);
+    background-image: url(../images/auth1.png);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -5144,7 +5148,7 @@ div.dt-button-info h2 {
 
 .counter-number {
     font-size: 30px;
-    font-family: Rubik,sans-serif;
+    font-family: "themebunfont",sans-serif;
     text-align: center
 }
 

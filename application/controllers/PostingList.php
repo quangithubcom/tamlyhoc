@@ -7,10 +7,26 @@ class PostingList extends CI_Controller {
 		parent::__construct();
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
 	}
+	public function checkPost($id_post){
+		$view_post = $this->MainModel->viewId('tlh_postinglist',$id_post);
+		if (isset($view_post)){ }else{
+			$dataresult = array('error' => 'ok','messenger' => 'Bài viết không tồn tại',);
+			$this->session->set_flashdata($dataresult);
+			redirect($_SERVER["HTTP_REFERER"]);
+		}
+	}
 
+	public function checkClosePost($id_post){
+		$view_post = $this->MainModel->viewId('tlh_postinglist',$id_post);
+		if($view_post['close_post'] == 0) { }else {
+			$dataresult = array('error' => 'ok','messenger' => 'Bài viết đã đóng. Không thể thao tác.',);
+			$this->session->set_flashdata($dataresult);
+			redirect($_SERVER["HTTP_REFERER"]);
+		}
+	}
 	public function index()
 	{
-		$data['list_post'] = $this->db->select('*')->from('tlh_postinglist')->get()->result_array();
+		$data['list_post'] = $this->db->select('*')->from('tlh_postinglist')->where('id_user',$this->session->userdata('LoggedIn')['id'])->order_by('date_creat','desc')->get()->result_array();
 		$data['template'] = 'postinglist/v_main';
 		$this->load->view('backend/layout/v_main',$data);
 	}
@@ -24,6 +40,8 @@ class PostingList extends CI_Controller {
 		if(isset($_POST['send'])){
 			// Thêm bài vào CSDL
 			$post_array = array(
+				'name_user' => $_POST['name_user'],
+				'phone_user' => $_POST['phone_user'],
 				'name' => $_POST['name'],
 				'description' => $_POST['description'],
 				'id_user' => $this->session->userdata('LoggedIn')['id'],
@@ -68,13 +86,14 @@ class PostingList extends CI_Controller {
 					$this->db->delete('tlh_postinglist');
 					$dataresult = array('error' => 'ok','messenger' => 'Nội dung chấp nhận doc,docx.',);
 					$this->session->set_flashdata($dataresult);
-					redirect('posting-creat?name='.$_POST['name'].'&description='.$_POST['description']);
+					redirect('posting-creat?name='.$_POST['name'].'&description='.$_POST['description'].'&name_user='.$_POST['name_user'].'&phone_user='.$_POST['phone_user']);
 				}
 			}
 		}
 	}
 
 	public function view($id_post){
+		$this->checkPost($id_post);
 		// Cập nhật các trạng thái đã đọc cho bài viết
 		$check_info = array(
 			'id_post' => $id_post,
@@ -169,11 +188,40 @@ class PostingList extends CI_Controller {
 			redirect($_SERVER["HTTP_REFERER"]);
 		}
 
+	}
 
+	public function delete($id_post){
+		$this->checkPost($id_post);
+		$this->checkClosePost($id_post);
+		$view_post = $this->MainModel->viewId('tlh_postinglist',$id_post);
+		if($view_post['status'] == 2 ){
+			
+			// Tạo 1 thông báo cho host
+			$mess_notification = $this->session->userdata('LoggedIn')['name'].' vừa xóa 1 bài viết "'.$view_post['name'];
+			$code = '#TLH'.RandomInt(7);
+			$link_check = 'all-post-edit/'.$view_post['id'];
+			$array_host = array(
+				'user_from' => $this->session->userdata('LoggedIn')['id'],
+				'user_to' => 1,
+				'mess_notification' => $mess_notification,
+				'read_notification' => 0,
+				'code' => $code,
+				'link_check' => $link_check,
+				'id_post' => $view_post['id'],
+				'status' => 11,
+				'date_creat' => strtotime(date('d-m-Y H:i:s')),
+			);
+			$this->db->insert('tbl_notification', $array_host);
 
+			$this->db->where('id', $id_post);
+			$this->db->delete('tlh_postinglist');
+
+		}else{
+			$dataresult = array('error' => 'ok','messenger' => 'Bài viết đã được kiểm duyệt bạn không thể xóa.',);
+			$this->session->set_flashdata($dataresult);
+
+		}
+		redirect($_SERVER["HTTP_REFERER"]);
 	}
 
 }
-
-/* End of file PostingList.php */
-/* Location: ./application/controllers/PostingList.php */

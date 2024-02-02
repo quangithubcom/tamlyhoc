@@ -74,7 +74,7 @@
     --bs-black-rgb: 0,0,0;
     --bs-body-color-rgb: 71,72,74;
     --bs-body-bg-rgb: 245,248,249;
-    --bs-font-sans-serif: "Rubik",sans-serif;
+    --bs-font-sans-serif: "themebunfont",sans-serif;
     --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-body-font-family: var(--bs-font-sans-serif);
@@ -9941,7 +9941,8 @@ textarea.form-control-lg {
 }
 
 .fw-medium {
-    font-weight: 500!important
+    font-weight: bold;
+    font-family: "themebunfont";
 }
 
 .fw-semibold {
@@ -15472,7 +15473,7 @@ html {
 
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
     color: #47484a;
-    font-family: Rubik,sans-serif;
+    font-family: "themebunfont",sans-serif;
 }
 
 [data-bs-theme=dark] .h1,[data-bs-theme=dark] .h2,[data-bs-theme=dark] .h3,[data-bs-theme=dark] .h4,[data-bs-theme=dark] .h5,[data-bs-theme=dark] .h6,[data-bs-theme=dark] h1,[data-bs-theme=dark] h2,[data-bs-theme=dark] h3,[data-bs-theme=dark] h4,[data-bs-theme=dark] h5,[data-bs-theme=dark] h6 {

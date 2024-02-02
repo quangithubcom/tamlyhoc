@@ -3,6 +3,18 @@
       <div class="card-body">
          <h6 class="card-title">Nội dung</h6>
          <div class="mb-3">
+            <label class="form-label">Họ và tên</label>
+            <input type="text" class="form-control" name="name_user" value="<?php if(isset($_GET['name_user'])){ echo $_GET['name_user']; }else{ echo $this->session->userdata('LoggedIn')['name']; } ?>">
+         </div>
+         <div class="mb-3">
+            <label class="form-label">Số điện thoại</label>
+            <input type="text" class="form-control" name="phone_user" value="<?php if(isset($_GET['phone_user'])){ echo $_GET['phone_user']; } ?>">
+         </div>
+         <div class="mb-3">
+            <label class="form-label">Email (Nhận thông báo)</label>
+            <input type="text" class="form-control" value="<?php echo $this->session->userdata('LoggedIn')['email']; ?>" disabled>
+         </div>
+         <div class="mb-3">
             <label class="form-label">Tên bài viết</label>
             <textarea class="form-control" name="name" required><?php if(isset($_GET['name'])){ echo $_GET['name']; } ?></textarea>
          </div>

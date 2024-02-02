@@ -7,6 +7,10 @@ class MainModel extends CI_Model {
 		parent::__construct();
 		
 	}
+	public function checkSetupExtendInfo($id_setup){
+		$view = $this->db->select('extend_info')->from('tlh_setup')->where('id',$id_setup)->get()->row_array();
+		echo $view['extend_info'];
+	}
 	public function checkStatus($status)
 	{
 		if($status == 1){

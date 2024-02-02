@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-3">
     <div class="col-12 mb-3">
         <a href="<?= base_url('user-creat'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Thêm người dùng</a>
         <a href="<?= base_url('decentralization-group'); ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-plus"></i> Group phân quyền</a>
@@ -29,7 +29,7 @@
                                     <i class="fa-solid fa-users-gear"></i>
                                     </a>
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <a href="<?= base_url('user-edit/'.$user['id']); ?>" class="px-2 text-primary">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>

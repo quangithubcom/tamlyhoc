@@ -10,7 +10,7 @@ class UserModel extends CI_Model {
 
 	public function getAll(){
 		$this->db->select('*');
-		$this->db->where('admin', 1);
+		$this->db->where('admin', 7);
 		$query = $this->db->get('tb_user');
 		return $query->result_array();
 	}

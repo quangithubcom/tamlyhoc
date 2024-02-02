@@ -52,7 +52,7 @@ class UserController extends CI_Controller {
 			'password' => md5($_POST['password']),
 			'decentralization' => $view_decentralization_group['decentralization'],
 			'status' => 1,
-			'admin' => 1,
+			'admin' => 7,
 		);
 		$this->MainModel->insert('tb_user', $info_user);
 		redirect(base_url('user'));
@@ -182,7 +182,8 @@ class UserController extends CI_Controller {
 	public function logout()
 	{
 		$this->session->unset_userdata('LoggedIn');
-		$this->session->set_flashdata('success', 'Đăng xuất thành công!');
+		$dataresult = array('success' => 'ok','messenger' => 'Đăng xuất thành công!',);
+		$this->session->set_flashdata($dataresult);
 		redirect(base_url('login'),'refresh');
 	}
 	public function changepass()

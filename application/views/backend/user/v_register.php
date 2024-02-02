@@ -5,9 +5,15 @@
     <meta charset="utf-8" />
     <title>Hội Tâm Lý Học Việt Nam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
-    <link rel="shortcut icon" href="<?= base_url('public/backend/'); ?>assets/images/favicon.ico">
+    <meta name="description" content="Trang đăng kí - Tạp Chí Hội Tâm Lý Học Việt Nam">
+    <meta content="VAP" name="author" />
+    <meta name="og:title" content="Giới thiệu" />
+    <meta name="og:description" content="" />
+    <meta name="og:image" content="https://tapchitamlyhocvietnam.com/images/banner.jpg" />
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tạp Chí Tâm Lý Học Việt Nam - Hội Tâm lý học Việt Nam">
+    <link rel="shortcut icon" href="<?= base_url('public/img/lg.png'); ?>">
     <script src="<?= base_url('public/backend/'); ?>assets/js/layout.js"></script>
     <link href="<?= base_url('public/backend/'); ?>assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('public/backend/'); ?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -22,15 +28,7 @@
                 <div class="col-md-10">
                     <div class="auth-full-page-content d-flex min-vh-100 py-sm-5 py-4">
                         <div class="w-100">
-                            <div class="d-flex flex-column h-100 py-0 py-xl-3">
-                                <div class="text-center mb-4">
-                                    <a href="index.html" class="">
-                                        <img src="<?= base_url('public/backend/'); ?>assets/images/logo-dark.png" alt="" height="22" class="auth-logo logo-dark mx-auto">
-                                        <img src="<?= base_url('public/backend/'); ?>assets/images/logo-light.png" alt="" height="22" class="auth-logo logo-light mx-auto">
-                                    </a>
-                                    <p class="mt-2">User Experience & Interface Design Strategy Saas Solution</p>
-                                </div>
-                                
+                            <div class="d-flex flex-column h-100 py-0 py-xl-3">                                
                                 <div class="card my-auto overflow-hidden" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                                     <div class="row g-0">
                                         <div class="col-lg-6">
@@ -43,7 +41,8 @@
                                             <div class="p-lg-5 p-4">
                                                 <div>
                                                     <div class="text-center mt-1">
-                                                        <h4 class="font-size-18">Đăng Kí Tài Khoản</h4>
+                                                        <img src="public/img/logo.png" alt="Hội Tâm Lý Học Việt Nam" width="130px">
+                                                        <h2 class="mt-2">TẠP CHÍ TÂM LÝ HỌC VIỆT NAM</h2>
                                                         <p>Hội Tâm Lý Học Việt Nam</p>
                                                     </div>
                                                     <?php if($this->session->flashdata('success')){ ?>
