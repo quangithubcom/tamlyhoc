@@ -13,15 +13,15 @@ class EmailController extends CI_Controller {
 		$config = array();
 		$config['protocol'] = 'smtp';
 		$config['smtp_host'] = 'ssl://smtp.gmail.com';
-		$config['smtp_user'] = 'noithatgoocchosongle@gmail.com';
-		$config['smtp_pass'] = 'tktqeirtpdbkbpzs';
+		$config['smtp_user'] = 'infor.tapchitamlyhocvietnam@gmail.com';
+		$config['smtp_pass'] = 'obdxtvfkoqucdzls';
 		$config['smtp_port'] = 465;
 		$config['charset'] = 'utf-8';
 		$this->email->initialize($config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('noithatgoocchosongle@gmail.com', 'Demo Login');
-		$this->email->to('noithatgoocchosongle@gmail.com');
+		$this->email->from('infor.tapchitamlyhocvietnam@gmail.com', 'Tạp Chí Tâm Lý Học Việt Nam');
+		$this->email->to('infor.tapchitamlyhocvietnam@gmail.com');
 $mess = '
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@ $mess = '
       <th>Country</th>
     </tr>
     <tr>
-      <td>Company</td>
+      <td><img src="https://tapchitamlyhocvietnam.com/public/img/banner_vn.jpg" width="100%"></td>
       <td>Contact</td>
       <td>Country</td>
     </tr>
@@ -71,12 +71,12 @@ $mess = '
 </body>
 </html>
 ';
-		// $this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-		// $this->email->set_header('Content-type', 'text/html');
-		// $this->email->subject('Email Test');
-		// $this->email->message($mess);
+		$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
+		$this->email->set_header('Content-type', 'text/html');
+		$this->email->subject('Thông báo phản biện');
+		$this->email->message($mess);
 
-		// $this->email->send();
+		$this->email->send();
 
 	}
 
