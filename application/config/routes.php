@@ -8,8 +8,11 @@ $route['404_override'] = '';
 $route['admin']['GET'] = 'logincontroller/index';
 $route['login']['GET'] = 'logincontroller/index';
 $route['login-user']['POST'] = 'logincontroller/login';
-$route['register']['GET'] = 'user/Registercontroller/index';
-$route['register-check']['POST'] = 'user/Registercontroller/register_check';
+$route['register']['GET'] = 'user/RegisterController/index';
+$route['register-check']['POST'] = 'user/RegisterController/register_check';
+
+$route['test-email']['GET'] = 'EmailController/index';
+$route['html-email']['GET'] = 'EmailController/htmlemail';
 
 // Danh sách gửi bài
 $route['posting-list']['GET'] = 'PostingList/index';
@@ -23,6 +26,7 @@ $route['posting-repaste-add']['POST'] = 'PostingList/repaste_add/$1/$2';
 
 $route['all-post']['GET'] = 'AllpostController/index';
 $route['all-post-status/(:any)/(:any)']['GET'] = 'AllpostController/status/$1/$2';
+$route['all-list-status/(:any)']['GET'] = 'AllpostController/list_status/$1';
 $route['all-post-counter/(:any)/(:any)']['GET'] = 'AllpostController/counter/$1/$2';
 $route['all-post-view/(:any)']['GET'] = 'AllpostController/view/$1';
 $route['all-post-edit/(:any)']['GET'] = 'AllpostController/edit/$1';

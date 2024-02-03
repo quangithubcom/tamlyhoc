@@ -12,11 +12,19 @@ class AllpostController extends CI_Controller {
 	{
 		$data['list_post_2'] = $this->db->select('*')->from('tlh_postinglist')->where('status',2)->order_by('date_creat','desc')->get()->result_array();
 		$data['list_post_3'] = $this->db->select('*')->from('tlh_postinglist')->where('status!=',2)->order_by('date_creat','desc')->get()->result_array();
-		$data['list_counter'] = $this->db->select('*')->from('tb_user')->where('admin',7)->get()->result_array();
 		$data['template'] = 'allpost/v_main';
 		$this->load->view('backend/layout/v_main',$data);
 	}
-
+	public function list_status($id_status)
+	{
+		if ($id_status == 2) {
+			$data['title'] = 'cần kiểm duyệt';
+			$data['list_post'] = $this->db->select('*')->from('tlh_postinglist')->where('status',2)->order_by('date_creat','desc')->get()->result_array();
+		}
+		
+		$data['template'] = 'allpost/v_list_status';
+		$this->load->view('backend/layout/v_main',$data);
+	}
 	public function checkPost($id_post){
 		$view_post = $this->MainModel->viewId('tlh_postinglist',$id_post);
 		if (isset($view_post)){ }else{

@@ -22,6 +22,26 @@ class CounterController extends CI_Controller {
 	}
 
 	public function status($id_post,$status){
+		$view_post = $this->MainModel->viewId('tlh_postinglist',$id_post);
+		$view_user = $this->MainModel->viewId('tb_user',$view_user['name']);
+		if($status == 4) {
+			// Tạo 1 thông báo cho host
+			$mess_notification = $this->session->userdata('LoggedIn')['name'].' đã đồng ý đăng bài viết "'.$view_post['name'].'" của bạn.';
+			$code = '#TLH'.RandomInt(7);
+			$link_check = 'posting-view/'.$view_post['id'];
+			$array_host = array(
+				'user_from' => $this->session->userdata('LoggedIn')['id'],
+				'user_to' => $view_post['id_user'],
+				'mess_notification' => $mess_notification,
+				'read_notification' => 0,
+				'code' => $code,
+				'link_check' => $link_check,
+				'id_post' => $view_post['id'],
+				'status' => 3,
+				'date_creat' => strtotime(date('d-m-Y H:i:s')),
+			);
+			$this->db->insert('tbl_notification', $array_host);
+		}
 		// Cập nhật trạng thái
 		$data['id_post'] = $id_post;
 		$update = array(
